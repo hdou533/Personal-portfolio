@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --header-height: 3rem;
+
+  --hue-color: 250;
+
+  /* HSL color */
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-lighter: hsl(var(--hue-color), 8%, 65%);
+  --inut-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+
+  /* Font and typography */
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /* Font weight */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* Margenes Bottom */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /* z index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+  /* Font size for larger devices */
+  @media screen and (min-width: 968px) {
+    :root {
+      --big-font-size: 3rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: 0.875rem;
+      --smaller-font-size: 0.813rem;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* resuable css */
+
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.sectionTitle {
+  font-size: var(--h1-font-size);
+}
+.sectionSubtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-top: var(--mb-0-25);
+}
+
+.sectionTitle,
+.sectionSubtitle {
+  text-align: center;
+}
+
+/* Layout */
+.container {
+  max-width: 768px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+/* NAV */
+.nav {
+  max-width: 968px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navToggle,
+.navLogo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.navLogo:hover {
+  color: var(--first-color);
+}
+
+.navToggle {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.navToggle:hover {
+  color: var(--first-color);
+}
+
+@media screen and (max-width: 767px) {
+  .navMenu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 2rem 1.5rem 4rem;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: 0.3s;
+  }
+}
+
+.navList {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+.navLink:hover {
+  color: var(--first-color);
+}
+.navIcon {
+  font-size: 1.5rem;
+}
+.navClose {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+.navClose:hover {
+  color: var(--title-color);
+}
+
+.showMenu {
+  bottom: 0;
+}
+
+/*/////////////////// Main /////////////////// */
+.avatar {
+  border: none;
+  width: 16rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Home */
+.homeContainer {
+  gap: 1rem;
+}
+.homeContent {
+  grid-template-columns: 0.5fr 3fr;
+  padding-top: 3.5rem;
+  align-items: center;
+}
+.homeSocial {
+  display: grid;
+  row-gap: 1rem;
+  grid-template-columns: max-content;
+}
+
+.homeSocialIcon {
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+.homeSocialIcon:hover {
+  color: var(--first-color-alt);
+}
+
+.homeData {
+  grid-column: 1/3;
+}
+
+.homeTitle {
+  font-size: var(--big-font-size);
+}
+.homeSubTitle {
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-0-75);
+}
+.homeDesc {
+  margin-bottom: var(--mb-2);
+}
+.homeScroll {
+  display: none;
+}
+.homeScrollBtn {
+  color: var(--first-color);
+  transition: 0.3s;
+}
+.homeScrollBtn:hover {
+  transform: translateY(0.25rem);
+}
+.homeScrollMouse {
+  font-size: 2rem;
+}
+.homeScrollName {
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  margin-right: var(--mb-0-25);
+}
+.homeScrollArrow {
+  font-size: 1.25rem;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-weight: var(--font-medium);
+}
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+.buttonIcon {
+  font-size: 1.25rem;
+  margin-left: var(--mb-1-5);
+  transition: 0.3s;
+}
+.button-flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+/*/////////////// About //////////////// */
+.aboutContainer {
+  margin-top: var(--mb-0-5);
+  text-align: center;
+}
+
+.aboutBtn {
+  margin-top: var(--mb-1-5);
+}
+
+/* //////////// Skills ////////////// */
+.skillsContainer {
+  row-gap: 0;
+}
+.skillsHeader {
+  display: flex;
+  align-items: center;
+  margin-top: var(--mb-2-5);
+  cursor: pointer;
+}
+
+.skillsIcon,
+.skillsArrow {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+.skillsIcon {
+  margin-right: --mb-0-75;
+}
+
+.skillsTitle {
+  font-size: var(--h3-font-size);
+}
+
+/* Contact */
+.contactContainer {
+  row-gap: 2rem;
+}
+.contactinfo {
+  display: flex;
+}
+.contactIcon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+
+.contactTitle {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+.contactSubtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-lighter);
+}
+
+.contactLabel {
+  font-size: var(--smaller-font-size);
+}
+.formInput {
+  width: 100%;
+  background-color: var(--inut-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* ///////////// Footer //////////// */
+.footerContainer {
+  row-gap: 3.5rem;
+}
+.footerBg {
+  background-color: var(--first-color-second);
+  padding: 3rem 0 0;
+}
+
+.footerBanner {
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  display: inline-flexbox;
+  align-items: flex-end;
+  color: #fff;
+}
