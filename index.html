@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Personal Website</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.jpg" />
+    <title>Sally Dou</title>
 </head>
 <body>
     <!--///////////////// Header ///////////////// -->
@@ -51,7 +52,8 @@
                 <i class="uil uil-times navClose" id="navClose"></i>
             </div>
             <div class="navBtns">
-                <div class="navToggle" id="navToggle"><i class="uil uil-apps"></i></div>
+                <i class="uil uil-moon change-theme navBtn" id="theme-button"></i>
+                <div class="navToggle navBtn" id="navToggle"><i class="uil uil-apps"></i></div>
             </div>
         </nav>
     </header>
@@ -61,9 +63,9 @@
         <div class="homeContainer container grid">
             <div class="homeContent grid">
                 <div class="homeSocial">
-                    <a href="" target="_blank" class="homeSocialIcon"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="" target="_blank" class="homeSocialIcon"><i class="uil uil-envelope"></i></a>
-                    <a href="" target="_blank" class="homeSocialIcon"><i class="uil uil-github"></i></a>
+                    <a href="https://www.linkedin.com/in/hongnan-dou" target="_blank" class="homeSocialIcon"><i class="uil uil-linkedin-alt iconColor"></i></a>
+                    <a href="mailto:hongnan.dou@gmail.com" target="_blank" class="homeSocialIcon"><i class="uil uil-envelope iconColor"></i></a>
+                    <a href="https://github.com/hdou533" target="_blank" class="homeSocialIcon"><i class="uil uil-github iconColor"></i></a>
                 </div>
                 <div class="homeImg">
                     <img class="avatar" src="assets/img/photo.jfif" alt="">
@@ -73,17 +75,11 @@
                     <h3 class="homeSubTitle">Aspiring Frontend Developer</h3>
                     <p class="homeDesc">High level experience in web design and knowledge, producing quality work</p>
                     <a href="#contact" class="button button-flex">
-                        Contact me <i class="uil uil-message"></i></i> 
+                        Contact me <i class="uil uil-message buttonIcon"></i></i> 
                     </a>
                 </div>
             </div>
-            <div class="homeScroll">
-                <a href="#about" class="homeScrollBtn button-flex">
-                    <i class="uil uil-mouse-alt homeScrollMouse"></i>
-                    <span class="homeScrollName">scroll down</span>
-                    <i class="uil uil-arrow-down homeScrollArrow"></i>
-                </a>
-            </div>
+
         </div>
     </section>
     <!--//////////////// About //////////////////-->
@@ -109,86 +105,184 @@
     <section class="skills section" id="skills">
         <h2 class="sectionTitle">Skills</h2>
         <span class="sectionSubtitle">My technical skills</span>
+        <!-- //////Skills Container Start////// -->
         <div class="skillsContainer container grid">
-            <div class="skillsContent">
+            <!-- ////Skills Category 1/////// -->
+            <div class="skillsContent skillsClose">
                 <div class="skillsHeader">
-                    <i class="uil uil-java-script skillsIcon"></i>
-                    <div>
+                    <div class="skillsBox">
+                        <i class="uil uil-bug skillsIcon iconColor"></i>
                         <h1 class="skillsTitle">Languages</h1>
                     </div>
-                    <i class="uil uil-angle-down"></i>
+                    <i class="uil uil-angle-down skillsArrow iconColor"></i>
                 </div>
+                <!-- //////skills List//////// -->
                 <div class="skillsList grid">
                     <div class="skillsData">
                         <div class="skillsTitle">
+                            <i class="uil uil-html5-alt skillsIcon iconColor"></i>
                             <h3 class="skillsName">HTML</h3>
                         </div>
                         <div class="skillsTitle">
+                            <i class="uil uil-css3-simple skillsIcon iconColor"></i>
                             <h3 class="skillsName">CSS</h3>
                         </div>
                         <div class="skillsTitle">
+                            <i class="uil uil-java-script skillsIcon iconColor"></i>
                             <h3 class="skillsName">JavaScript</h3>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="skillsContent">
-                <div class="skillsHeader">
-                    <i class="uil uil-java-script skillsIcon"></i>
-                    <div>
+            <!-- ////Skills Category 2/////// -->
+            <div class="skillsContent skillsClose">
+                <div class="skillsHeader">                    
+                    <div class="skillsBox">
+                        <i class="uil uil-coffee  skillsIcon iconColor"></i>
                         <h1 class="skillsTitle">FrameWork</h1>
                     </div>
-                    <i class="uil uil-angle-down"></i>
+                    <i class="uil uil-angle-down skillsArrow iconColor"></i>
                 </div>
                 <div class="skillsList grid">
                     <div class="skillsData">
                         <div class="skillsTitle">
-                            <h3 class="skillsName">HTML</h3>
+                            <i class="uil uil-react skillsIcon iconColor"></i>
+                            <h3 class="skillsName">React</h3>
                         </div>
-                        <div class="skillsTitle">
-                            <h3 class="skillsName">CSS</h3>
-                        </div>
-                        <div class="skillsTitle">
-                            <h3 class="skillsName">JavaScript</h3>
-                        </div>
+
                     </div>
                 </div>
             </div>
-
-            <div class="skillsContent">
-                <div class="skillsHeader">
-                    <i class="uil uil-java-script skillsIcon"></i>
-                    <div>
+            <!-- ////Skills Category 3/////// -->
+            <div class="skillsContent skillsClose">
+                <div class="skillsHeader">                    
+                    <div class="skillsBox">
+                        <i class="uil uil-rocket skillsIcon iconColor"></i>
                         <h1 class="skillsTitle">Others</h1>
                     </div>
-                    <i class="uil uil-angle-down"></i>
+                    <i class="uil uil-angle-down skillsArrow iconColor"></i>
                 </div>
                 <div class="skillsList grid">
                     <div class="skillsData">
                         <div class="skillsTitle">
-                            <h3 class="skillsName">HTML</h3>
+                            <i class="uil uil-cloud-data-connection skillsIcon iconColor"></i>
+                            <h3 class="skillsName">AWS</h3>
                         </div>
                         <div class="skillsTitle">
-                            <h3 class="skillsName">CSS</h3>
+                            <i class="uil uil-code-branch skillsIcon iconColor"></i>
+                            <h3 class="skillsName">Git</h3>
                         </div>
-                        <div class="skillsTitle">
-                            <h3 class="skillsName">JavaScript</h3>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- //////Skills Container End////// -->
+        </div>
+    </section>
+    <!--//////////////// Qualification //////////////////-->
+    <section class="qualification section" id="qualification">
+        <h2 class="sectionTitle">Qualification</h2>
+        <span class="sectionSubtitle">My Personal Journey</span>
+
+        <div class="qualificationContainer container">
+            <div class="qualificationTabs">
+                <div class="qualificationBun button-flex">
+                    Education
+                </div>
+
+                <div class="qualificationBtn button-flex">
+                    work
+                </div>
+            </div>
+                <div class="qualificationSections">
+                    <div class="qualificationContent">
+                        <div class="qualificationData">
+                            <div>
+                                <h3 class="qualificationTitle">Ms in Information Technology</h3>
+                                <span class="qualificationSubtitle">University of Auckland</span>
+                                <div class="qualificationCalendar">
+                                    2009-2014
+                                </div>
+
+                            </div>
+                            <div>
+                                <span class="qualificationRounder"></span>
+                                <span class="qualificationLine"></span>
+                            </div>
+                        </div>
+                        <!-- //////////////Qualification 2 ///////////////// -->
+
+                        <div class="qualificationData">
+                            <div>
+                                <h3 class="qualificationTitle">Bsc. Informataion and Computing Science</h3>
+                                <span class="qualificationSubtitle">China University of Petroleum</span>
+                                <div class="qualificationCalendar">
+                                    2009-2014
+                                </div>
+
+                            </div>
+                            <div>
+                                <span class="qualificationRounder"></span>
+                                <span class="qualificationLine"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--//////////////// Qualification //////////////////-->
-    <section class="qualification section" id="qualification">
-        <h2 class="sectionTitle">Qualification</h2>
-        <span class="sectionSubtitle">qualification</span>
-    </section>
     <!--//////////////// Portfolio //////////////////-->
     <section class="portfolio section" id="portfolio">
         <h2 class="sectionTitle">Portfolio</h2>
-        <span class="sectionSubtitle">Portfolio</span>
+        <span class="sectionSubtitle">Most Recent Work</span>
+        <div class="portfolioContainer container swiper-container">
+            <div class="swiper-wrapper">
+                <!-- ////portfolio 1///// -->
+                <div class="portfolioContent grid swiper-slide">
+                    <img class="portfolioImg" src="assets/img/p1.jpg" alt="">
+                    <div class="portfolioData">
+                        <h3 class="portfolioTitle"></h3>
+                        <p class="portfolioDesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti natus dolor animi, provident ad eligendi doloremque commodi laboriosam vero? Veniam.</p>
+                        <a href="#" class="button button-flex protfolioBtn">
+                            Demo
+                            <i class="uil uil-arrow-right buttonIcon"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ////portfolio 2///// -->
+                <div class="portfolioContent grid swiper-slide">
+                    <img class="portfolioImg" src="assets/img/p1.jpg" alt="">
+                    <div class="portfolioData">
+                        <h3 class="portfolioTitle"></h3>
+                        <p class="portfolioDesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti natus dolor animi, provident ad eligendi doloremque commodi laboriosam vero? Veniam.</p>
+                        <a href="#" class="button button-flex protfolioBtn">
+                            Demo
+                            <i class="uil uil-arrow-right buttonIcon"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ////portfolio 3///// -->
+                <div class="portfolioContent grid swiper-slide">
+                    <img class="portfolioImg" src="assets/img/p1.jpg" alt="">
+                    <div class="portfolioData">
+                        <h3 class="portfolioTitle">My Personal Website</h3>
+                        <p class="portfolioDesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti natus dolor animi, provident ad eligendi doloremque commodi laboriosam vero? Veniam.</p>
+                        <a href="https://github.com/hdou533/Personal-portfolio" 
+                        class="button button-flex protfolioBtn">
+                            Demo
+                            <i class="uil uil-arrow-right buttonIcon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+              <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev portfolioSwiperIcon"></div>
+            <div class="swiper-button-next portfolioSwiperIcon"></div>
+        </div>
     </section>
     <!--//////////////// Contact //////////////////-->
     <section class="contact section" id="contact">
@@ -196,7 +290,7 @@
         <span class="sectionSubtitle">Get in touch</span>
         <div class="contactContainer container grid">
             <div class="contactinfo">
-                <i class="uil uil-phone contactIcon"></i>
+                <i class="uil uil-phone contactIcon iconColor"></i>
                 <div>
                     <h3 class="contactTitle">Call Me</h3>
                     <span class="contanctSubtitle">020-4183-1021</span>
@@ -204,7 +298,7 @@
                 
             </div>
             <div class="contactinfo">
-                <i class="uil uil-envelope contactIcon"></i>
+                <i class="uil uil-envelope contactIcon iconColor"></i>
                 <div>
                     <h3 class="contactTitle">Email</h3>
                     <span class="contanctSubtitle">hongnan.dou@gmail.com</span>
@@ -212,14 +306,14 @@
                 
             </div>
             <div class="contactinfo">
-                <i class="uil uil-map-marker contactIcon"></i>
+                <i class="uil uil-map-marker contactIcon iconColor"></i>
                 <div>
                     <h3 class="contactTitle">Location</h3>
                     <span class="contanctSubtitle">Auckland, NZ</span>
                 </div>
                 
             </div>
-            <form action="" class="contactForm">
+            <!-- <form action="" method="post" class="contactForm">
                 <div class="contactInputs grid">
                     <div class="contactContent">
                         <label for="" class="contactLabel">Name</label>
@@ -234,11 +328,10 @@
                         <textarea name="" id="" cols="0" rows="7" class="formInput"></textarea>
                     </div>
                     <div>
-                        <a href="#" class="button button-flex">Send Message</a>
+                        <a class="button button-flex">Send Message</a>
                     </div>
-                </div>
-    
-            </form>
+                </div>    
+            </form> -->
         </div>
 
     </section>
@@ -247,14 +340,23 @@
     <footer class="footer">
         <div class="footerBg">
             <div class="footerContainer container grid">
-
+                <div class="footerTitleBlock">
+                    <h2 class="footerTitle">Sally</h2>
+                    <span class="footerSubtitle">Aspiring Frontend Developer</span>
+                </div>
+                <div class="footerLinks">
+                    <a class="footerLink" href="#about">About</a>
+                    <a class="footerLink" href="#skills">Skills</a>
+                    <a class="footerLink" href="#portfolio">Portfolio</a>
+                </div>
+                <div class="copyright">
+                    <span>&copy;2021 </span>
+                </div>
             </div>
-            <div class="footerBanner">
-                &copy;2021 
-            </div>
-        </div>
+            </div>            
     </footer>
 
+    <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

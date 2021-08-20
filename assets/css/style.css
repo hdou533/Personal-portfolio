@@ -13,8 +13,11 @@
   --title-color: hsl(var(--hue-color), 8%, 15%);
   --text-color: hsl(var(--hue-color), 8%, 45%);
   --text-color-lighter: hsl(var(--hue-color), 8%, 65%);
-  --inut-color: hsl(var(--hue-color), 70%, 96%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
+  --button-color: hsl(var(--hue-color), 69%, 61%);
+  --button-text-color: #fff;
+  --icon-color: hsl(var(--hue-color), 69%, 61%);
   --container-color: #fff;
 
   /* Font and typography */
@@ -59,6 +62,18 @@
     }
   }
 }
+/* dark theme */
+body.dark-theme {
+  --first-color: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --button-color: hsl(var(--hue-color), 69%, 61%);
+  --icon-color: #fff;
+  --button-text-color: #fff;
+}
 
 * {
   box-sizing: border-box;
@@ -71,6 +86,7 @@ html {
 }
 
 body {
+  max-width: 100%;
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -124,6 +140,7 @@ img {
   max-width: 768px;
   margin-left: var(--mb-1-5);
   margin-right: var(--mb-1-5);
+  margin-top: var(--mb-2);
 }
 
 .grid {
@@ -139,8 +156,11 @@ img {
   z-index: var(--z-fixed);
   background-color: var(--body-color);
 }
+.iconColor {
+  color: var(--icon-color);
+}
 
-/* NAV */
+/* //////////////////////////////////////////NAV/////////////////////////////// */
 .nav {
   max-width: 968px;
   height: var(--header-height);
@@ -148,7 +168,14 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+.navBtns {
+  display: flex;
+}
+.navBtn {
+  padding-left: 1.5rem;
+}
 
+.change-theme,
 .navToggle,
 .navLogo {
   color: var(--title-color);
@@ -159,10 +186,12 @@ img {
   color: var(--first-color);
 }
 
+.change-theme,
 .navToggle {
   font-size: 1.1rem;
   cursor: pointer;
 }
+.change-theme:hover,
 .navToggle:hover {
   color: var(--first-color);
 }
@@ -216,7 +245,7 @@ img {
   bottom: 0;
 }
 
-/*/////////////////// Main /////////////////// */
+/*////////////////////////////////// Main ////////////////////////////////////// */
 .avatar {
   border: none;
   width: 16rem;
@@ -224,7 +253,7 @@ img {
   border-radius: 50%;
 }
 
-/* Home */
+/* ///////////////////////////////////Home///////////////////////////////// */
 .homeContainer {
   gap: 1rem;
 }
@@ -263,34 +292,13 @@ img {
 .homeDesc {
   margin-bottom: var(--mb-2);
 }
-.homeScroll {
-  display: none;
-}
-.homeScrollBtn {
-  color: var(--first-color);
-  transition: 0.3s;
-}
-.homeScrollBtn:hover {
-  transform: translateY(0.25rem);
-}
-.homeScrollMouse {
-  font-size: 2rem;
-}
-.homeScrollName {
-  font-size: var(--small-font-size);
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-  margin-right: var(--mb-0-25);
-}
-.homeScrollArrow {
-  font-size: 1.25rem;
-}
 
 /* Buttons */
 .button {
   display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  height: 3rem;
   padding: 1rem;
   border-radius: 0.8rem;
   font-weight: var(--font-medium);
@@ -300,7 +308,7 @@ img {
 }
 .buttonIcon {
   font-size: 1.25rem;
-  margin-left: var(--mb-1-5);
+  margin-left: var(--mb-0-5);
   transition: 0.3s;
 }
 .button-flex {
@@ -308,7 +316,7 @@ img {
   align-items: center;
 }
 
-/*/////////////// About //////////////// */
+/*////////////////////////////// About //////////////////////////////// */
 .aboutContainer {
   margin-top: var(--mb-0-5);
   text-align: center;
@@ -318,31 +326,106 @@ img {
   margin-top: var(--mb-1-5);
 }
 
-/* //////////// Skills ////////////// */
+/* //////////////////////////// Skills /////////////////////////// */
 .skillsContainer {
   row-gap: 0;
 }
 .skillsHeader {
   display: flex;
   align-items: center;
-  margin-top: var(--mb-2-5);
+  margin: var(--mb-1) 0;
   cursor: pointer;
+}
+
+.skillsBox {
+  display: flex;
+  align-items: center;
 }
 
 .skillsIcon,
 .skillsArrow {
-  font-size: 2rem;
-  color: var(--first-color);
+  font-size: 1.5rem;
 }
 .skillsIcon {
-  margin-right: --mb-0-75;
+  margin-right: var(--mb-0-75);
 }
 
 .skillsTitle {
   font-size: var(--h3-font-size);
+  display: flex;
+  align-items: center;
+}
+.skillsName {
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+.skillsClose .skillsList {
+  height: 0;
+  overflow: hidden;
 }
 
-/* Contact */
+.skillsOpen .skillsList {
+  height: max-content;
+}
+
+.skillsOpen .skillsArrow {
+  transform: rotate(-180deg);
+}
+/* Qualification*/
+.qualificationTabs {
+  display: flex;
+  justify-content: space-evenly;
+  margin: var(--mb-2);
+}
+
+.qualificationData {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+}
+
+/* ////////////////////////////Portfolio/////////////////////////////// */
+.portfolioContainer {
+  overflow: initial;
+}
+.portfolioContent {
+  padding: 0 var(--mb-1-5);
+}
+.portfolioData {
+  text-align: center;
+}
+.portfolioImg {
+  width: 80%;
+  border-radius: 0.5rem;
+  justify-self: center;
+}
+
+.protfolioBtn {
+  margin-top: var(--mb-1-5);
+}
+
+.portfolioSwiperIcon {
+  color: var(--text-color-lighter);
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--first-color);
+}
+.swiper-button-prev {
+  left: -0.5rem;
+}
+.swiper-button-next {
+  right: -0.5rem;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: -2.5rem;
+  color: var(--first-color);
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--first-color);
+}
+
+/*//////////////////////////////////Contact////////////////////////////////// */
 .contactContainer {
   row-gap: 2rem;
 }
@@ -351,7 +434,6 @@ img {
 }
 .contactIcon {
   font-size: 2rem;
-  color: var(--first-color);
   margin-right: var(--mb-0-75);
 }
 
@@ -364,34 +446,127 @@ img {
   color: var(--text-color-lighter);
 }
 
-.contactLabel {
-  font-size: var(--smaller-font-size);
-}
-.formInput {
-  width: 100%;
-  background-color: var(--inut-color);
-  color: var(--text-color);
-  font-family: var(--body-font);
-  border: none;
-  outline: none;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem 0.75rem;
-  margin-top: 0.5rem;
-}
-
-/* ///////////// Footer //////////// */
+/* ///////////////////////////////////////////// Footer /////////////////////////////////// */
 .footerContainer {
   row-gap: 3.5rem;
+  color: var(--container-color);
 }
 .footerBg {
-  background-color: var(--first-color-second);
-  padding: 3rem 0 0;
+  background-color: var(--body-color);
+  padding: 2rem 0 3rem;
 }
 
-.footerBanner {
+.footerSubtitle {
+  color: var(--text-color);
   font-size: var(--smaller-font-size);
-  text-align: center;
-  display: inline-flexbox;
-  align-items: flex-end;
-  color: #fff;
+}
+.footerLink {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.copyright {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
+/* ///////////////// Media Queries /////////////////// */
+@media screen and (min-width: 568px) {
+  .homeContent {
+    grid-template-columns: max-content 1fr 1fr;
+  }
+  .homeData {
+    grid-column: initial;
+  }
+  .avatar {
+    order: 1;
+    justify-self: center;
+  }
+  .aboutContainer,
+  .skillsContainer,
+  .portfolioContainer {
+    justify-content: center;
+  }
+  .qualificationSections {
+    display: grid;
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 6rem 0 2rem;
+  }
+
+  .sectionSubtitle {
+    margin-bottom: 4rem;
+  }
+  .header {
+    top: 0;
+    bottom: initial;
+  }
+
+  .header,
+  .main,
+  .footerContainer {
+    padding: 0 1rem;
+  }
+
+  .nav {
+    height: 1.5rem;
+    column-gap: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .navIcon,
+  .navClose,
+  .navToggle {
+    display: none;
+  }
+  .navList {
+    display: flex;
+    column-gap: 2rem;
+  }
+  .navMenu {
+    margin-left: auto;
+  }
+  .homeContainer {
+    row-gap: 5rem;
+  }
+  .homeContent {
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+  }
+
+  .aboutContainer {
+    column-gap: 5rem;
+  }
+  .aboutDesc {
+    text-align: initial;
+  }
+  .aboutInfo {
+    justify-content: space-between;
+  }
+
+  .qualificationTabs {
+    justify-content: center;
+  }
+  .qualificationBtns {
+    margin: 0 var(--mb-1);
+  }
+  .qualificationSections {
+    grid-template-columns: 0.5fr;
+  }
 }
