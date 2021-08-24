@@ -91,3 +91,27 @@ let swiper = new Swiper('.portfolioContainer', {
     },
   
   });
+
+  /* ===================Qulification===================== */
+  const qulificationTabs =  document.querySelectorAll('.qualificationBtn');
+  const qulificationContents = document.querySelectorAll('.qualificationContent');
+
+
+  qulificationTabs.forEach(tab=>{
+      tab.addEventListener('click', openTab);
+  })
+  function openTab(e){
+      const targetTab = e.currentTarget;
+      const id = targetTab.dataset.id;
+
+      qulificationTabs.forEach(tab => {
+          tab.classList.remove('active');
+      })
+      qulificationContents.forEach(content =>{
+          content.classList.remove('active');
+      })
+
+      document.querySelector('#'+id).classList.add('active');
+      targetTab.classList.add('active');
+      
+  }
