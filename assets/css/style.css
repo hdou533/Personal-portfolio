@@ -287,10 +287,10 @@ img {
   font-size: var(--h3-font-size);
   color: var(--text-color);
   font-weight: var(--font-medium);
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: var(--mb-2);
 }
 .homeDesc {
-  margin-bottom: var(--mb-2);
+  margin-bottom: var(--mb-3);
 }
 
 /* Buttons */
@@ -381,7 +381,7 @@ img {
   justify-content: center;
 }
 .qualificationBtn {
-  padding: 0 1.5rem;
+  padding: 0 3rem;
   border: none;
   background: none;
   font-family: var(--body-font);
@@ -392,7 +392,7 @@ img {
 }
 
 .qualificationData {
-  display: block;
+  display: grid;
   width: 45%;
   position: relative;
   margin: 0 1rem;
