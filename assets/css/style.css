@@ -18,7 +18,10 @@
   --button-color: hsl(var(--hue-color), 69%, 61%);
   --button-text-color: #fff;
   --icon-color: hsl(var(--hue-color), 69%, 61%);
-  --container-color: #fff;
+  --container-color: hsl(var(--hue-color), 69%, 61%);
+  --hover-color: hsl(var(--hue-color), 69%, 61%);
+  --pagination-active-color: hsl(var(--hue-color), 69%, 61%);
+  --pagination-color: hsl(var(--hue-color), 8%, 45%);
 
   /* Font and typography */
   --body-font: "Poppins", sans-serif;
@@ -69,10 +72,13 @@ body.dark-theme {
   --text-color: hsl(var(--hue-color), 8%, 75%);
   --input-color: hsl(var(--hue-color), 29%, 16%);
   --body-color: hsl(var(--hue-color), 28%, 12%);
-  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --container-color: hsl(var(--hue-color), 28%, 12%);
   --button-color: hsl(var(--hue-color), 69%, 61%);
   --icon-color: #fff;
   --button-text-color: #fff;
+  --hover-color: hsl(var(--hue-color), 69%, 61%);
+  --pagination-active-color: hsl(var(--hue-color), 69%, 61%);
+  --pagination-color: #fff;
 }
 
 * {
@@ -182,18 +188,15 @@ img {
   font-weight: var(--font-medium);
 }
 
-.navLogo:hover {
-  color: var(--first-color);
-}
-
 .change-theme,
 .navToggle {
   font-size: 1.1rem;
   cursor: pointer;
 }
+.navLogo:hover,
 .change-theme:hover,
 .navToggle:hover {
-  color: var(--first-color);
+  color: var(--hover-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -224,7 +227,7 @@ img {
   font-weight: var(--font-medium);
 }
 .navLink:hover {
-  color: var(--first-color);
+  color: var(--hover-color);
 }
 .navIcon {
   font-size: 1.5rem;
@@ -405,7 +408,7 @@ img {
 }
 
 .qualificationBtn.active {
-  color: var(--first-color);
+  color: var(--button-color);
 }
 
 .qualificationContent {
@@ -426,7 +429,9 @@ img {
   text-align: center;
 }
 .portfolioImg {
-  width: 80%;
+  width: 576px;
+  height: 376px;
+  object-fit: cover;
   border-radius: 0.5rem;
   justify-self: center;
 }
@@ -440,7 +445,7 @@ img {
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: var(--first-color);
+  color: var(--button-color);
 }
 .swiper-button-prev {
   left: -0.5rem;
@@ -453,7 +458,7 @@ img {
   color: var(--first-color);
 }
 .swiper-pagination-bullet-active {
-  background-color: var(--first-color);
+  background-color: var(--pagination-active-color);
 }
 
 /*//////////////////////////////////Contact////////////////////////////////// */
@@ -480,10 +485,10 @@ img {
 /* ///////////////////////////////////////////// Footer /////////////////////////////////// */
 .footerContainer {
   row-gap: 3.5rem;
-  color: var(--container-color);
+  color: #fff;
 }
 .footerBg {
-  background-color: var(--first-color);
+  background-color: var(--container-color);
   padding: 2rem 0 3rem;
 }
 .footerTitle {
