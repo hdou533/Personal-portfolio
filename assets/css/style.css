@@ -238,7 +238,7 @@ img {
   bottom: 2rem;
   cursor: pointer;
   font-size: 1.5rem;
-  color: var(--first-color);
+  color: var(--text-color);
 }
 .navClose:hover {
   color: var(--title-color);
@@ -399,6 +399,7 @@ img {
   width: 45%;
   position: relative;
   margin: 0 1rem;
+  padding-left: 30px;
 }
 .qualificationData.left {
   left: 0;
@@ -428,11 +429,16 @@ img {
 .portfolioData {
   text-align: center;
 }
+.portfolioImgContainer {
+  width: 100%;
+  min-height: 400px;
+}
 .portfolioImg {
-  width: 576px;
-  height: 376px;
+  width: 100%;
+  min-height: 360px;
   object-fit: cover;
   border-radius: 0.5rem;
+  align-self: center;
   justify-self: center;
 }
 
