@@ -94,7 +94,7 @@ let swiper = new Swiper('.portfolioContainer', {
 
   /* ===================Qulification===================== */
   const qulificationTabs =  document.querySelectorAll('.qualificationBtn');
-  const qulificationContents = document.querySelectorAll('.qualificationContent');
+  const qulificationContent = document.querySelectorAll('.qualificationContent');
 
 
   qulificationTabs.forEach(tab=>{
@@ -107,10 +107,10 @@ let swiper = new Swiper('.portfolioContainer', {
       qulificationTabs.forEach(tab => {
           tab.classList.remove('active');
       })
-      qulificationContents.forEach(content =>{
+      qulificationContent.forEach(content =>{
           content.classList.remove('active');
       })
-
+      
       document.querySelector('#'+id).classList.add('active');
       targetTab.classList.add('active');
       

@@ -378,7 +378,7 @@ img {
 /* .qualificationContainer {
   border: solid 1px blue;
 } */
-.qualificationTabs {
+/* .qualificationTabs {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -415,6 +415,65 @@ img {
 .qualificationContent {
   display: none;
 }
+.qualificationContent.active {
+  display: block;
+} */
+
+/* -------------Qualification Test Section -------------- */
+.qualificationTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qualificationBtn {
+  padding: 0 3rem;
+  border: none;
+  background: none;
+  font-family: var(--body-font);
+  font-size: var(--h3-font-size);
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+}
+
+.qulificationTimeline {
+  display: flex;
+}
+.lines {
+  margin-left: 6px;
+  margin-top: 10px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #cacaca;
+  border-radius: 50%;
+}
+.line {
+  height: 126px;
+  width: 2px;
+  background: #cacaca;
+  margin-left: 4px;
+}
+.qualificationData {
+  display: block;
+  position: relative;
+  line-height: 2em;
+  padding: 5px 0 40px 20px;
+}
+.qualificationCalendar,
+.qulificationSubtitle {
+  font-size: 0.8rem;
+}
+
+.qualificationContent {
+  display: none;
+}
+
+.qualificationBtn.active {
+  color: var(--button-color);
+}
+
 .qualificationContent.active {
   display: block;
 }
@@ -613,5 +672,8 @@ img {
   }
   .qualificationSections {
     grid-template-columns: 0.5fr;
+  }
+  .portfolioImg {
+    min-height: 472px;
   }
 }
